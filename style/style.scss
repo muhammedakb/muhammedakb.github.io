@@ -8,6 +8,8 @@
   border: none;
   text-decoration: none;
   list-style: none;
+  font-family: "Montserrat", sans-serif;
+
   &:focus {
     outline: 0;
   }
@@ -16,6 +18,18 @@
 body {
   width: 100%;
   height: 100%;
+
+  .center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .col-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
   #begin {
     display: flex;
@@ -57,9 +71,7 @@ body {
         margin-top: 100px;
         display: flex;
         a {
-          display: flex;
-          align-items: center;
-          justify-content: center;
+          @extend .center;
           width: 60px;
           height: 55px;
           background-color: #c4c4c4;
@@ -80,12 +92,12 @@ body {
       }
     }
     .right-side {
-      width: 63%;
+      width: 60%;
       height: 670px;
       background-color: #000000;
       transform: rotate(9deg);
       position: absolute;
-      right: -55px;
+      right: -60px;
       top: 10px;
       #navbar {
         position: absolute;
@@ -108,15 +120,12 @@ body {
               border-radius: 20px;
             }
             a {
-              font-family: "Montserrat", sans-serif;
               font-weight: 700;
               font-size: 17px;
               padding: 1rem;
               color: #fff;
               height: 2.8rem;
-              display: flex;
-              align-items: center;
-              justify-content: center;
+              @extend .center;
             }
           }
         }
@@ -145,7 +154,6 @@ body {
     display: flex;
     align-items: center;
     overflow: hidden;
-    font-family: "Montserrat", sans-serif;
     .left-area {
       h3 {
         font-weight: 700;
@@ -171,6 +179,117 @@ body {
         cursor: pointer;
         &:hover {
           border: 2px solid whitesmoke;
+          margin-top: calc(1.3rem + 4px);
+        }
+      }
+    }
+  }
+
+  #info-area {
+    position: relative;
+    background: radial-gradient(
+        50% 50% at 50% 50%,
+        rgba(26, 21, 21, 0) 0%,
+        rgba(1, 1, 1, 0.16) 100%
+      ),
+      #ffffff;
+    @extend .col-center;
+    .content-title {
+      border: 6px solid #000000;
+      height: 100px;
+      width: 28%;
+      min-width: 310px;
+      @extend .center;
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 0.35em;
+      font-size: 26px;
+    }
+    #about-me {
+      @extend .col-center;
+      padding: 3rem;
+      margin: 1rem;
+      margin-top: 4em;
+
+      p {
+        margin-top: 68px;
+        font-family: "Open Sans";
+        font-size: 15px;
+        color: #050505;
+        max-width: calc(100vw - 50%);
+      }
+      span {
+        margin-top: 68px;
+        padding: 10px;
+        width: 12%;
+        min-width: 135px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        text-align: center;
+        font-weight: 600;
+        border-left: 2px solid #000000;
+        border-right: 2px solid #000000;
+      }
+      img {
+        margin-top: 68px;
+      }
+    }
+
+    .about-content {
+      @extend .center;
+      flex-wrap: wrap;
+      max-height: 373px;
+      max-width: 1066px;
+      margin-top: 1rem;
+      .content {
+        max-width: 490px;
+        padding: 20px 0 35px 25px;
+        // border: 1px solid #000000;
+        &:last-child {
+          margin-top: 13px;
+        }
+        &.one {
+          background: url("../img/design.svg") no-repeat top left;
+        }
+        &.two {
+          background: url("../img/development.svg") no-repeat top left;
+          margin-left: 67px;
+        }
+        &.three {
+          background: url("../img/maintenance.svg") no-repeat top left;
+          background-position-y: -10px;
+          background-position-x: -10px;
+        }
+        h3 {
+          font-weight: bold;
+          font-size: 21px;
+          letter-spacing: 0.18em;
+        }
+        p {
+          font-family: "Open Sans", sans-serif;
+          font-size: 13px;
+          line-height: 18px;
+          text-align: justify;
+          opacity: 0.8;
+          margin-top: 28px;
+        }
+      }
+    }
+    .seperator {
+      margin-top: 80px;
+    }
+    #skills {
+      @extend .col-center;
+      padding: 3rem;
+      margin: 1rem;
+      margin-top: 4em;
+      max-width: 1004px;
+      // border: 1px solid #000000;
+      .using {
+        margin-top: 79px;
+        padding: 15px 30px;
+        .using-items {
+          // TODO : js elements
         }
       }
     }

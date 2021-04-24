@@ -7,13 +7,22 @@
   box-sizing: border-box;
   border: none;
   text-decoration: none;
-  list-style: none; }
+  list-style: none;
+  font-family: "Montserrat", sans-serif; }
   *:focus {
     outline: 0; }
 
 body {
   width: 100%;
   height: 100%; }
+  body .center, body #begin .left-side .icons a, body #begin .right-side #navbar ul li a, body #info-area .content-title, body #info-area .about-content {
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+  body .col-center, body #info-area, body #info-area #about-me, body #info-area #skills {
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
   body #begin {
     display: flex;
     background-color: #d7d7d7;
@@ -48,9 +57,6 @@ body {
         margin-top: 100px;
         display: flex; }
         body #begin .left-side .icons a {
-          display: flex;
-          align-items: center;
-          justify-content: center;
           width: 60px;
           height: 55px;
           background-color: #c4c4c4;
@@ -64,12 +70,12 @@ body {
           body #begin .left-side .icons a:not(:first-child) {
             margin-left: 1rem; }
     body #begin .right-side {
-      width: 63%;
+      width: 60%;
       height: 670px;
       background-color: #000000;
       transform: rotate(9deg);
       position: absolute;
-      right: -55px;
+      right: -60px;
       top: 10px; }
       body #begin .right-side #navbar {
         position: absolute;
@@ -90,15 +96,11 @@ body {
               background-color: #545353;
               border-radius: 20px; }
             body #begin .right-side #navbar ul li a {
-              font-family: "Montserrat", sans-serif;
               font-weight: 700;
               font-size: 17px;
               padding: 1rem;
               color: #fff;
-              height: 2.8rem;
-              display: flex;
-              align-items: center;
-              justify-content: center; }
+              height: 2.8rem; }
       body #begin .right-side img {
         display: block;
         width: 350px;
@@ -113,8 +115,7 @@ body {
     padding: 2.3rem;
     display: flex;
     align-items: center;
-    overflow: hidden;
-    font-family: "Montserrat", sans-serif; }
+    overflow: hidden; }
     body #text-area .left-area h3 {
       font-weight: 700;
       font-size: 20px;
@@ -136,6 +137,82 @@ body {
       border-bottom: none;
       cursor: pointer; }
       body #text-area .left-area span:hover {
-        border: 2px solid whitesmoke; }
+        border: 2px solid whitesmoke;
+        margin-top: calc(1.3rem + 4px); }
+  body #info-area {
+    position: relative;
+    background: radial-gradient(50% 50% at 50% 50%, rgba(26, 21, 21, 0) 0%, rgba(1, 1, 1, 0.16) 100%), #ffffff; }
+    body #info-area .content-title {
+      border: 6px solid #000000;
+      height: 100px;
+      width: 28%;
+      min-width: 310px;
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 0.35em;
+      font-size: 26px; }
+    body #info-area #about-me {
+      padding: 3rem;
+      margin: 1rem;
+      margin-top: 4em; }
+      body #info-area #about-me p {
+        margin-top: 68px;
+        font-family: "Open Sans";
+        font-size: 15px;
+        color: #050505;
+        max-width: calc(100vw - 50%); }
+      body #info-area #about-me span {
+        margin-top: 68px;
+        padding: 10px;
+        width: 12%;
+        min-width: 135px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        text-align: center;
+        font-weight: 600;
+        border-left: 2px solid #000000;
+        border-right: 2px solid #000000; }
+      body #info-area #about-me img {
+        margin-top: 68px; }
+    body #info-area .about-content {
+      flex-wrap: wrap;
+      max-height: 373px;
+      max-width: 1066px;
+      margin-top: 1rem; }
+      body #info-area .about-content .content {
+        max-width: 490px;
+        padding: 20px 0 35px 25px; }
+        body #info-area .about-content .content:last-child {
+          margin-top: 13px; }
+        body #info-area .about-content .content.one {
+          background: url("../img/design.svg") no-repeat top left; }
+        body #info-area .about-content .content.two {
+          background: url("../img/development.svg") no-repeat top left;
+          margin-left: 67px; }
+        body #info-area .about-content .content.three {
+          background: url("../img/maintenance.svg") no-repeat top left;
+          background-position-y: -10px;
+          background-position-x: -10px; }
+        body #info-area .about-content .content h3 {
+          font-weight: bold;
+          font-size: 21px;
+          letter-spacing: 0.18em; }
+        body #info-area .about-content .content p {
+          font-family: "Open Sans", sans-serif;
+          font-size: 13px;
+          line-height: 18px;
+          text-align: justify;
+          opacity: 0.8;
+          margin-top: 28px; }
+    body #info-area .seperator {
+      margin-top: 80px; }
+    body #info-area #skills {
+      padding: 3rem;
+      margin: 1rem;
+      margin-top: 4em;
+      max-width: 1004px; }
+      body #info-area #skills .using {
+        margin-top: 79px;
+        padding: 15px 30px; }
 
 /*# sourceMappingURL=style.css.map */
