@@ -19,7 +19,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center; }
-  body .col-center, body #info-area, body #info-area #about-me, body #info-area #skills {
+  body .col-center, body #info-area, body #info-area #about-me {
     display: flex;
     flex-direction: column;
     align-items: center; }
@@ -207,12 +207,34 @@ body {
     body #info-area .seperator {
       margin-top: 80px; }
     body #info-area #skills {
+      display: flex;
+      flex-direction: column;
       padding: 3rem;
       margin: 1rem;
       margin-top: 4em;
       max-width: 1004px; }
+      body #info-area #skills .tech-title {
+        font-weight: 700;
+        font-size: 24px;
+        letter-spacing: 0.18em;
+        width: 100%; }
       body #info-area #skills .using {
         margin-top: 79px;
         padding: 15px 30px; }
+      body #info-area #skills .items {
+        display: flex;
+        flex-wrap: wrap; }
+        body #info-area #skills .items .item {
+          max-width: 240px;
+          max-height: 170px;
+          padding: 18px; }
+          body #info-area #skills .items .item:not(:nth-child(4n + 1)) {
+            margin-left: 100px; }
+          body #info-area #skills .items .item .skill-img {
+            width: 100px;
+            height: 100px; }
+            body #info-area #skills .items .item .skill-img.soon {
+              filter: grayscale(100%);
+              opacity: 0.6; }
 
 /*# sourceMappingURL=style.css.map */
