@@ -53,17 +53,17 @@ const learning = [
     title: "nodejs",
     continues: true,
   }),
-  (vuejs = {
-    id: 2,
-    img: "img/skills/vue.png",
-    title: "vue js",
-    continues: true,
-  }),
   (mongodb = {
     id: 5,
     img: "img/skills/mongo.svg",
     title: "MongoDB",
     continues: true,
+  }),
+  (vuejs = {
+    id: 2,
+    img: "img/skills/vue.png",
+    title: "vue js",
+    continues: false,
   }),
   (tailwind = {
     id: 3,
@@ -123,11 +123,14 @@ const getAllSkills = () => {
     `);
     }
     return (learningSelector.innerHTML += `
-    <div class="item">
-        <img src="${e.img}" alt="${e.title}" title="${e.title}" class="skill-img soon">
-        <h3 class="item-name">${e.title}</h3>
-    </div>
-`);
+        <div class="item">
+            <img src="${e.img}" alt="${e.title}" title="${e.title}" class="skill-img soon">
+            <div class="overlay">
+              <div class="text">Yakında öğreneceğim 🙄</div>
+            </div>
+            <h3 class="item-name">${e.title}</h3>
+        </div>
+      `);
   });
 
   otherSkills.map((e) => {
