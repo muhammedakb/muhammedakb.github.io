@@ -2,6 +2,7 @@
 const usingSelector = document.querySelector(".using-items");
 const learningSelector = document.querySelector(".learning-items");
 const otherSelector = document.querySelector(".other-items");
+const portfolioSelector = document.querySelector(".row");
 
 const usingNow = [
   (html = {
@@ -89,7 +90,7 @@ const otherSkills = [
   (english = {
     id: 1,
     img: "img/skills/english.svg",
-    title: "english",
+    title: "english<br>B1",
   }),
   (python = {
     id: 2,
@@ -100,6 +101,51 @@ const otherSkills = [
     id: 3,
     img: "img/skills/csgo.jpg",
     title: "cs go",
+  }),
+];
+
+const portfolio = [
+  (item1 = {
+    id: 1,
+    img: "https://www.w3schools.com/w3images/cars1.jpg",
+    category: "coded",
+    title: "araba satış işi",
+    info: "arabamız pek iyidir abee",
+  }),
+  (item2 = {
+    id: 2,
+    img: "https://www.w3schools.com/w3images/cars1.jpg",
+    category: "designed",
+    title: "araba satış işi",
+    info: "arabamız pek iyidir abee",
+  }),
+  (item3 = {
+    id: 3,
+    img: "https://www.w3schools.com/w3images/cars1.jpg",
+    category: "coded",
+    title: "araba satış işi",
+    info: "arabamız pek iyidir abee",
+  }),
+  (item4 = {
+    id: 4,
+    img: "https://www.w3schools.com/w3images/cars1.jpg",
+    category: "designed",
+    title: "araba satış işi",
+    info: "arabamız pek iyidir abee",
+  }),
+  (item5 = {
+    id: 5,
+    img: "https://www.w3schools.com/w3images/cars1.jpg",
+    category: "coded",
+    title: "araba satış işi",
+    info: "arabamız pek iyidir abee",
+  }),
+  (item6 = {
+    id: 6,
+    img: "https://www.w3schools.com/w3images/cars2.jpg",
+    category: "designed",
+    title: "araba satış işi",
+    info: "arabamız pek iyidir abee",
   }),
 ];
 
@@ -139,6 +185,18 @@ const getAllSkills = () => {
             <img src="${e.img}" alt="${e.title}" title="${e.title}" class="skill-img">
             <h3 class="item-name">${e.title}</h3>
         </div>
+    `;
+  });
+
+  portfolio.map((e) => {
+    portfolioSelector.innerHTML += `
+    <div class="column ${e.category}">
+        <img src="${e.img}" alt="${e.title}" style="width:100%; height:100%; object-fit:cover;">
+       <div class="overlay">
+          <div class="text">${e.title}</div>
+          <div class="text">${e.info}</div>
+        </div>
+    </div>
     `;
   });
 };
