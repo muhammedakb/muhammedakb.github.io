@@ -126,7 +126,7 @@ const getAllSkills = () => {
         <div class="item">
             <img src="${e.img}" alt="${e.title}" title="${e.title}" class="skill-img soon">
             <div class="overlay">
-              <div class="text">Yakında öğreneceğim 🙄</div>
+              <div class="text">I will learn soon🙄</div>
             </div>
             <h3 class="item-name">${e.title}</h3>
         </div>
