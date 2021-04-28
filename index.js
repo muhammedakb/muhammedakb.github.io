@@ -202,3 +202,39 @@ const getAllSkills = () => {
 };
 
 getAllSkills();
+
+let favicon_images = [
+    "./img/skills/html.svg",
+    "./img/skills/css.svg",
+    "./img/skills/sass.svg",
+    "./img/skills/js.svg",
+    "./img/skills/react.svg",
+    "./img/skills/vue.png",
+    "./img/skills/bootstrap.svg",
+    "./img/skills/git.svg",
+    "./img/github.png",
+    "./img/skills/figma.svg",
+  ],
+  image_counter = 0;
+
+setInterval(
+  (changeIcon = () => {
+    if (document.querySelector("link[rel='icon']") !== null)
+      document.querySelector("link[rel='icon']").remove();
+    if (document.querySelector("link[rel='shortcut icon']") !== null)
+      document.querySelector("link[rel='shortcut icon']").remove();
+
+    document
+      .querySelector("head")
+      .insertAdjacentHTML(
+        "beforeend",
+        '<link rel="icon" href="' +
+          favicon_images[image_counter] +
+          '" type="image/gif">'
+      );
+
+    if (image_counter == favicon_images.length - 1) image_counter = 0;
+    else image_counter++;
+  }),
+  800
+);

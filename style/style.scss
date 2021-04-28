@@ -14,7 +14,9 @@
     outline: 0;
   }
 }
-
+html {
+  zoom: 0.9;
+}
 body {
   width: 100%;
   height: 100%;
@@ -42,6 +44,37 @@ body {
     letter-spacing: 0.35em;
     font-size: 26px;
   }
+  .explore {
+    margin-top: 68px;
+    padding: 10px;
+    width: 12%;
+    min-width: 135px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 600;
+    border-left: 2px solid #000000;
+    border-right: 2px solid #000000;
+  }
+  #about-me {
+    @extend .col-center;
+    padding: 3rem;
+    margin: 1rem;
+    margin-top: 4em;
+
+    p {
+      margin-top: 68px;
+      font-family: "Open Sans";
+      font-size: 15px;
+      color: #050505;
+      max-width: calc(100vw - 50%);
+    }
+
+    img {
+      margin-top: 68px;
+    }
+  }
+
   #begin {
     display: flex;
     background-color: #d7d7d7;
@@ -205,36 +238,6 @@ body {
       ),
       #ffffff;
     @extend .col-center;
-
-    #about-me {
-      @extend .col-center;
-      padding: 3rem;
-      margin: 1rem;
-      margin-top: 4em;
-
-      p {
-        margin-top: 68px;
-        font-family: "Open Sans";
-        font-size: 15px;
-        color: #050505;
-        max-width: calc(100vw - 50%);
-      }
-      span {
-        margin-top: 68px;
-        padding: 10px;
-        width: 12%;
-        min-width: 135px;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-        text-align: center;
-        font-weight: 600;
-        border-left: 2px solid #000000;
-        border-right: 2px solid #000000;
-      }
-      img {
-        margin-top: 68px;
-      }
-    }
 
     .about-content {
       @extend .center;
@@ -437,6 +440,124 @@ body {
       color: #fffbfb;
       font-weight: 600;
       font-size: 18px;
+    }
+  }
+
+  #contact {
+    position: relative;
+    background: radial-gradient(
+        50% 50% at 50% 50%,
+        rgba(26, 21, 21, 0) 0%,
+        rgba(1, 1, 1, 0.16) 100%
+      ),
+      #ffffff;
+    @extend .col-center;
+    padding-bottom: 68px;
+    form {
+      @extend .col-center;
+      .input:not(input[type="submit"]) {
+        width: 600px;
+        height: 48px;
+        padding: 14px;
+        font-size: 18px;
+        border-bottom: 5px solid #000000;
+        border-left: 5px solid #000000;
+        background: transparent;
+        &.area {
+          width: 100%;
+          max-width: 600px;
+          min-height: 184px;
+        }
+        &:not(textarea):focus::-webkit-input-placeholder {
+          transform: translateX(150%);
+          transition-duration: 3s;
+        }
+        &:not(:first-child) {
+          margin-top: 52px;
+        }
+        &::placeholder {
+          text-transform: uppercase;
+          font-weight: 700;
+          font-size: 14px;
+          color: #8b8b8b;
+          line-height: 17px;
+        }
+      }
+      .input[type="submit"] {
+        height: 45px;
+        width: 197px;
+        font-weight: 600;
+        font-size: 16px;
+        letter-spacing: 2px;
+        cursor: pointer;
+        border-left: 4px solid #000000;
+        border-right: 4px solid #000000;
+        &:hover {
+          border: 4px solid #000000;
+          font-weight: 700;
+          letter-spacing: 4px;
+          transition: 0.5s;
+        }
+      }
+    }
+  }
+
+  footer {
+    height: 220px;
+    background-color: #1a1a1a;
+    @extend .col-center;
+    justify-content: space-around;
+    color: #ffffff;
+    .back-top-area {
+      height: 40px;
+      @extend .col-center;
+      justify-content: space-between;
+      cursor: pointer;
+      &:hover {
+        transform: translateY(-10px);
+        transition: 0.6s;
+      }
+      p {
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 15px;
+        letter-spacing: 3px;
+      }
+    }
+
+    .icon-area {
+      width: 50%;
+      @extend .center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      a {
+        color: #ffffff;
+        i {
+          font-size: 30px;
+          &.fa-twitter:hover {
+            color: #00acee;
+          }
+          &.fa-instagram:hover {
+            color: #8134af;
+          }
+          &.fa-steam:hover {
+            color: #30526f;
+            // background: #fff;
+          }
+          &.fa-discord:hover {
+            color: #7289da;
+            // background: #fff;
+          }
+        }
+      }
+    }
+
+    .copy-area {
+      font-weight: 500;
+      letter-spacing: 1px;
+      span {
+        font-weight: 700;
+      }
     }
   }
 }
