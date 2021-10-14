@@ -3,6 +3,7 @@ const usingSelector = document.querySelector(".using-items");
 const learningSelector = document.querySelector(".learning-items");
 const otherSelector = document.querySelector(".other-items");
 const portfolioSelector = document.querySelector(".row");
+const getTop = document.getElementById("getTop");
 
 const usingNow = [
   (html = {
@@ -60,6 +61,12 @@ const learning = [
     title: "MongoDB",
     continues: true,
   }),
+  (typescript = {
+    id: 6,
+    img: "img/skills/typescript.svg",
+    title: "typescript",
+    continues: true,
+  }),
   (vuejs = {
     id: 2,
     img: "img/skills/vue.png",
@@ -76,12 +83,6 @@ const learning = [
     id: 4,
     img: "img/skills/mysql.svg",
     title: "MySQL",
-    continues: false,
-  }),
-  (typescript = {
-    id: 6,
-    img: "img/skills/typescript.svg",
-    title: "typescript",
     continues: false,
   }),
 ];
@@ -109,43 +110,43 @@ const portfolio = [
     id: 1,
     img: "https://www.w3schools.com/w3images/cars1.jpg",
     category: "coded",
-    title: "araba satış işi",
-    info: "arabamız pek iyidir abee",
+    title: "lorem ipsum",
+    info: "lorem ipsum dolor amet",
   }),
   (item2 = {
     id: 2,
     img: "https://www.w3schools.com/w3images/cars1.jpg",
     category: "designed",
-    title: "araba satış işi",
-    info: "arabamız pek iyidir abee",
+    title: "lorem ipsum",
+    info: "lorem ipsum dolor amet",
   }),
   (item3 = {
     id: 3,
     img: "https://www.w3schools.com/w3images/cars1.jpg",
     category: "coded",
-    title: "araba satış işi",
-    info: "arabamız pek iyidir abee",
+    title: "lorem ipsum",
+    info: "lorem ipsum dolor amet",
   }),
   (item4 = {
     id: 4,
     img: "https://www.w3schools.com/w3images/cars1.jpg",
     category: "designed",
-    title: "araba satış işi",
-    info: "arabamız pek iyidir abee",
+    title: "lorem ipsum",
+    info: "lorem ipsum dolor amet",
   }),
   (item5 = {
     id: 5,
     img: "https://www.w3schools.com/w3images/cars1.jpg",
     category: "coded",
-    title: "araba satış işi",
-    info: "arabamız pek iyidir abee",
+    title: "lorem ipsum",
+    info: "lorem ipsum dolor amet",
   }),
   (item6 = {
     id: 6,
     img: "https://www.w3schools.com/w3images/cars2.jpg",
     category: "designed",
-    title: "araba satış işi",
-    info: "arabamız pek iyidir abee",
+    title: "lorem ipsum",
+    info: "lorem ipsum dolor amet",
   }),
 ];
 
@@ -201,7 +202,9 @@ const getAllSkills = () => {
   });
 };
 
-getAllSkills();
+window.addEventListener("DOMContentLoaded", (e) => {
+  getAllSkills();
+});
 
 let favicon_images = [
     "./img/skills/html.svg",
