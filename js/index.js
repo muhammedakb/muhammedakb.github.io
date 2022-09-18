@@ -31,6 +31,12 @@ const usingNow = [
     img: "img/skills/react.svg",
     title: "react",
   }),
+  (typescript = {
+    id: 6,
+    img: "img/skills/typescript.svg",
+    title: "typescript",
+    continues: true,
+  }),
   (bootstrap = {
     id: 6,
     img: "img/skills/bootstrap.svg",
@@ -49,6 +55,12 @@ const usingNow = [
 ];
 
 const learning = [
+  (reactNative = {
+    id: 5,
+    img: "img/skills/react.svg",
+    title: "react native",
+    continues: true,
+  }),
   (nodejs = {
     id: 1,
     img: "img/skills/node.svg",
@@ -61,48 +73,30 @@ const learning = [
     title: "MongoDB",
     continues: true,
   }),
-  (typescript = {
-    id: 6,
-    img: "img/skills/typescript.svg",
-    title: "typescript",
-    continues: true,
-  }),
-  (vuejs = {
-    id: 2,
-    img: "img/skills/vue.png",
-    title: "vue js",
-    continues: false,
-  }),
   (tailwind = {
     id: 3,
     img: "img/skills/tailwindcss.svg",
     title: "tailwind css",
     continues: false,
   }),
-  (mysql = {
-    id: 4,
-    img: "img/skills/mysql.svg",
-    title: "MySQL",
-    continues: false,
-  }),
 ];
 
 const otherSkills = [
-  (english = {
-    id: 1,
-    img: "img/skills/english.svg",
-    title: "english<br>B1",
-  }),
-  (python = {
-    id: 2,
-    img: "img/skills/python.png",
-    title: "python",
-  }),
-  (csgo = {
-    id: 3,
-    img: "img/skills/csgo.jpg",
-    title: "cs go",
-  }),
+  // (english = {
+  //   id: 1,
+  //   img: "img/skills/english.svg",
+  //   title: "english<br>B1",
+  // }),
+  // (python = {
+  //   id: 2,
+  //   img: "img/skills/python.png",
+  //   title: "python",
+  // }),
+  // (csgo = {
+  //   id: 3,
+  //   img: "img/skills/csgo.jpg",
+  //   title: "cs go",
+  // }),
 ];
 
 const portfolio = [
@@ -160,25 +154,24 @@ const getAllSkills = () => {
     `;
   });
 
-  learning.map((e) => {
-    if (e.continues === true) {
-      return (learningSelector.innerHTML += `
-        <div class="item">
-            <img src="${e.img}" alt="${e.title}" title="${e.title}" class="skill-img">
-            <h3 class="item-name">${e.title}</h3>
-        </div>
-    `);
-    }
-    return (learningSelector.innerHTML += `
-        <div class="item">
-            <img src="${e.img}" alt="${e.title}" title="${e.title}" class="skill-img soon">
-            <div class="overlay">
-              <div class="text">I will learn soon🙄</div>
+  learning.map((e) =>
+    e.continues
+      ? (learningSelector.innerHTML += `
+         <div class="item">
+             <img src="${e.img}" alt="${e.title}" title="${e.title}" class="skill-img">
+             <h3 class="item-name">${e.title}</h3>
+         </div>
+     `)
+      : (learningSelector.innerHTML += `
+         <div class="item">
+             <img src="${e.img}" alt="${e.title}" title="${e.title}" class="skill-img soon">
+             <div class="overlay">
+               <div class="text">I will learn soon🙄</div>
             </div>
-            <h3 class="item-name">${e.title}</h3>
+             <h3 class="item-name">${e.title}</h3>
         </div>
-      `);
-  });
+       `)
+  );
 
   otherSkills.map((e) => {
     otherSelector.innerHTML += `
